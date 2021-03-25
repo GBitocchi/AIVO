@@ -8,7 +8,7 @@ api = Api(countries_v1_0_bp)
 class CountryListResource(Resource):
     def get(self, name_index, value_index):
         iter_csv = pd.read_csv('resources/BLI_28032019144925238.csv', iterator=True)
-        countries_retrieved = pd.concat([chunk[(chunk['Indicator'] == name_index) & (chunk['Value'] > value_index)] for chunk in iter_csv])
+        countries_retrieved = pd.concat([chunk[(chunk['Indicator'] == name_index) & (chunk['Inequality'] == 'Total') & (chunk['Value'] > value_index)] for chunk in iter_csv])
         if countries_retrieved.empty:
             no_found_response = make_response('No countries matched with the input condition', 404)
             no_found_response.mimetype = "text/plain"
