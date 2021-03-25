@@ -1,5 +1,5 @@
 # challenge-aivo
-Challenge-aivo
+Proyecto que cumple los requerimientos especificados en el challenge de Aivo
 
 ## Ejecución del proyecto
 
